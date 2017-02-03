@@ -31,12 +31,12 @@
 </style>
 </head>
 <?php
-	$game = new CreateSudoku();
+	$game = new CreateSudoku();				#create a new object to createSudoku class
         
-        $game -> makeSudoku();
-        if($game->chkSudoku(0, 0))
-            $game ->showSudoku(); 
+        $game -> makeSudoku();					//call to class methods	of making the sudoku and initilize 27 random value
+        if($game->chkSudoku(0, 0))				//check if solution exist to the sudoku made 
+            $game ->showSudoku(); 				//if yes show the sudoku
        else
-           echo "No solution";
+           echo "No solution";					//else show the error
 ?>
 
