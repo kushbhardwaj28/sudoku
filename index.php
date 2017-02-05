@@ -31,12 +31,25 @@
 </style>
 </head>
 <?php
-	$game = new CreateSudoku();				#create a new object to createSudoku class
+	$game = new CreateSudoku();
         
-        $game -> makeSudoku();					//call to class methods	of making the sudoku and initilize 27 random value
-        if($game->chkSudoku(0, 0))				//check if solution exist to the sudoku made 
-            $game ->showSudoku(); 				//if yes show the sudoku
-       else
-           echo "No solution";					//else show the error
+        $game -> makeSudoku();
+
+        $game->showSudoku();
 ?>
 
+<input type="button" id="hsbutton" onclick="hideshow()" value="Show Solution" style="width:100px">
+<script>
+    function hideshow(){
+        var hsbutton = document.getElementById('hsbutton');
+        var solvedTable = document.getElementById('sudoku1');
+        if(hsbutton.value == 'Show Solution'){
+            solvedTable.hidden = false;
+            hsbutton.value = 'Hide Solution';
+        }
+        else if(hsbutton.value == 'Hide Solution'){
+            solvedTable.hidden = true;
+            hsbutton.value = 'Show Solution';
+        }
+    }
+</script>
