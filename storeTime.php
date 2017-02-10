@@ -1,7 +1,7 @@
 <?php
     session_start();
     $name = $_SESSION["playerName"];
-    $con = mysql_connect("localhost","root","5874");
+    $con = mysql_connect("database_location","php_myadmin_user","php_admin_password");
     mysql_select_db("sudoku");
     if(isset($_GET['time'])){
         $ptime = $_GET['time'];
