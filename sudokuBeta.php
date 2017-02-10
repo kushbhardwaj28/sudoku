@@ -198,7 +198,7 @@
                 }
             }
 
-            echo "<div id='main2'><table id='sudoku2'>";
+            echo "<div id='main2'><table id='sudoku2' style='margin:auto'>";
             for ($i=0; $i < 9; $i++) { 
                 echo "<tr>";
                 for ($j=0; $j < 9; $j++) {
