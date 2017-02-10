@@ -14,8 +14,9 @@
 <?php
     session_start();
     $chk = 0;
-    $con = mysql_connect("localhost","root","5874");
-    mysql_select_db("sudoku");
+    $con = mysql_connect("database_location","php_myadmin_user","php_admin_password");
+    mysql_select_db("sudoku");                                                      //make a database named sudoku.in that make a table named
+                                                                                    //sudokuplayer with two feilds p_name and p_time
     if(isset($_GET['submit'])){
         $players = mysql_query('select p_name from sudokuplayers');
             while($name = mysql_fetch_row($players)){
