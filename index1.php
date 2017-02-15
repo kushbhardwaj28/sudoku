@@ -54,36 +54,19 @@
         for(var i =0 ;i<9;i++){
             for(var j =0 ;j<9;j++){
                 var index1 = 's'+i+j;
-                var index2 = 'h'+i+j;
                 var x = document.getElementById(index1);
-                var y = document.getElementById(index2);
-                if(x.value != y.value){
+                if(x.value != array1[i][j]){
                     errorPlace++;
                 }
             }
         }
-    
-    function hideshow(){
-        var hsbutton = document.getElementById('hsbutton');
-        var solvedTable = document.getElementById('sudoku1');
-        if(hsbutton.value == 'Show Solution'){
-            solvedTable.hidden = false;
-            hsbutton.value = 'Hide Solution';
-        }
-        else if(hsbutton.value == 'Hide Solution'){
-            solvedTable.hidden = true;
-            hsbutton.value = 'Show Solution';
-        }
-    }
     function checkans(){
         errorPlace = 0;
         for(var i =0 ;i<9;i++){
             for(var j =0 ;j<9;j++){
                 var index1 = 's'+i+j;
-                var index2 = 'h'+i+j;
                 var x = document.getElementById(index1);
-                var y = document.getElementById(index2);
-                if(x.value != y.value){
+                if(x.value != array1[i][j]){
                     x.style.backgroundColor = 'red';
                     errorPlace++;
                 }
