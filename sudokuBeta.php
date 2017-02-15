@@ -184,18 +184,14 @@
             }
             echo "</table></div>";
             
+            echo "<script>var array1 = [];var array2 = [];</script>";
             for ($i=0; $i < 9; $i++) { 
                 for ($j=0; $j < 9; $j++) {
-                    if($this->sudokuArray[$i][$j] != 0){
                         echo "<script>
-                          document.getElementById('h".$i.$j."').value=".$this->sudokuArray[$i][$j].";
-                          document.getElementById('h".$i.$j."').disabled = true;
-                          document.getElementById('h".$i.$j."').style.backgroundColor = \"grey\";
-                          document.getElementById('h".$i.$j."').style.border = \"grey\";
-                          document.getElementById('h".$i.$j."').style.color = \"black\";
+                          array2.push(".$this->sudokuArray[$i][$j].");
                              </script>";
-                    }
                 }
+                echo "<script>array1.push(array2);array2 = [];</script>";
             }
 
             echo "<div id='main2'><table id='sudoku2' style='margin:auto'>";
